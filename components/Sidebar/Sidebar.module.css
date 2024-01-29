@@ -1,0 +1,43 @@
+
+.sidebarContent {
+    background-image: url('/bg-sidebar-desktop.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 20%;
+    
+
+    .menuLink {
+        padding-right: 2rem;
+        padding-left: 2rem;
+        padding-top: 2em;
+
+        .menuLinkContent {
+            display: flex;
+        }
+
+        .stepCount {
+            width: 45px;
+            height: 45px;
+            /* background-color: antiquewhite; */
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1em;
+            border: 1px solid hsl(0, 0%, 100%);
+            color: hsl(0, 0%, 100%);
+        }
+
+        .title {
+            margin: 0;
+            color: hsl(0, 0%, 100%)
+            
+        }
+        .subtitle {
+            margin: 0;
+            color: hsl(231, 11%, 63%);
+        }
+    }
+}
+
