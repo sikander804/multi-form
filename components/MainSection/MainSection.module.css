@@ -1,5 +1,65 @@
 
 
 .mainSectionContainer {
-    padding: 10px;
+    flex-grow: 1;
+    padding: 1rem 3rem;
+    padding-bottom: 2rem;
+    color: hsl(213, 96%, 18%);
+
+    .title {
+        margin: 0;
+        margin-bottom:0.2rem;
+        color: hsl(213, 96%, 18%);        
+    }
+    .subtitle {
+        margin: 0;
+        color: hsl(231, 11%, 63%);
+        font-size: 16px;
+    }
+
+    .form {
+        margin-top: 2rem;
+
+        .titleContainer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .title {
+            margin: 0;
+            color: hsl(213, 96%, 18%); 
+            font-size: 14px;
+            font-weight: 400;
+            
+        }
+
+        .error {
+            margin: 0;
+            color: hsl(354, 84%, 57%);
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .formInput {
+            margin-bottom: 1.5rem;
+            margin-top: 0.3rem;
+            color: hsl(213, 96%, 18%); 
+        }
+
+        .formButton {
+            text-align: right;
+
+            .button {
+                background-color: hsl(213, 96%, 18%);
+                color: hsl(0, 0%, 100%);
+            }
+            .button:disabled {
+                background-color: hsl(213, 96%, 18%);
+                color: hsl(0, 0%, 100%);
+                opacity: 0.6;
+            }
+        }
+
+
+    }
 }

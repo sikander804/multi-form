@@ -6,8 +6,10 @@ import MainSection from "@/components/MainSection";
 export default function Home() {
   return (
     <main className="main-container">
-      <Sidebar />
-      <MainSection />
+      <div className="form-container">
+        <Sidebar />
+        <MainSection />
+      </div>
     </main>
   );
 }
