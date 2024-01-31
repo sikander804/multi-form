@@ -1,8 +1,9 @@
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useContext } from "react";
 import { Typography, Input, Button } from "antd";
 
 import styles from "./MainSection.module.css";
 import { IPersonalInfoFormType } from "./MainSection";
+import { FormContext } from "@/context/form-context";
 
 const { Title, Paragraph } = Typography;
 
@@ -12,6 +13,8 @@ const MainSection = () => {
     {}
   );
 
+  const { updateFormState } = useContext(FormContext);
+
   const handleSubmitForm = useCallback(
     (event: { preventDefault: () => void }) => {
       event.preventDefault();
@@ -20,6 +23,7 @@ const MainSection = () => {
         formData?.email?.length &&
         formData?.phone_number?.length
       ) {
+        updateFormState("isPersonalInfoComplete");
       }
     },
     [formData]
