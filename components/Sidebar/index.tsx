@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { Typography } from "antd";
 
 import { ISidebarType } from "./Sidebar";
 import styles from "./Sidebar.module.css";
+import { FormContext } from "@/context/form-context";
 
 const { Title, Paragraph } = Typography;
 
@@ -9,22 +11,28 @@ const SIDE_BAR_CONTENT: ISidebarType[] = [
   {
     id: "step-1",
     name: "Your Info",
+    key: "yourInfo",
   },
   {
     id: "step-2",
     name: "Select Plan",
+    key: "selectPlan",
   },
   {
     id: "step-3",
     name: "Add-ons",
+    key: "addOns",
   },
   {
     id: "step-4",
     name: "Summary",
+    key: "summary",
   },
 ];
 
 const Sidebar = () => {
+  const { formState } = useContext(FormContext);
+
   return (
     <div className={styles.sidebarContent}>
       {SIDE_BAR_CONTENT?.map((item: ISidebarType, i: number) => {
@@ -33,8 +41,12 @@ const Sidebar = () => {
             <div className={styles.menuLinkContent}>
               <div
                 style={{
-                  backgroundColor: "hsl(206, 94%, 87%)",
-                  color: "hsl(213, 96%, 18%)",
+                  backgroundColor: !formState?.isPersonalInfoComplete
+                    ? "hsl(206, 94%, 87%)"
+                    : "",
+                  color: !formState?.isPersonalInfoComplete
+                    ? "hsl(213, 96%, 18%)"
+                    : "",
                 }}
                 className={styles.stepCount}
               >

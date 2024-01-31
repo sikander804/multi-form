@@ -9,18 +9,18 @@ type IChildrenProps = React.ReactNode;
 
 const FormProvider = ({ children }: { children: IChildrenProps }) => {
   const [formState, setFormState] = useState({
-    isPersonalInfoComplete: false,
-    isSelectPlanComplete: false,
-    isAddOnsComplete: false,
-    isSummaryComplete: false,
+    yourInfo: false,
+    selectPlan: false,
+    addOns: false,
+    summary: false,
   });
 
   const resetState = () => {
     setFormState({
-      isPersonalInfoComplete: false,
-      isSelectPlanComplete: false,
-      isAddOnsComplete: false,
-      isSummaryComplete: false,
+      yourInfo: false,
+      selectPlan: false,
+      addOns: false,
+      summary: false,
     });
   };
 
