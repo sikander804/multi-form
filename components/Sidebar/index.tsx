@@ -31,7 +31,15 @@ const Sidebar = () => {
         return (
           <div className={styles.menuLink} key={item.id}>
             <div className={styles.menuLinkContent}>
-              <div className={styles.stepCount}>{i + 1}</div>
+              <div
+                style={{
+                  backgroundColor: "hsl(206, 94%, 87%)",
+                  color: "hsl(213, 96%, 18%)",
+                }}
+                className={styles.stepCount}
+              >
+                {i + 1}
+              </div>
               <div>
                 <Paragraph className={styles.subtitle}>{`STEP ${
                   i + 1
