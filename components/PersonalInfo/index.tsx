@@ -1,13 +1,13 @@
 import { useCallback, useState, useContext } from "react";
 import { Typography, Input, Button } from "antd";
 
-import styles from "./MainSection.module.css";
-import { IPersonalInfoFormType } from "./MainSection";
+import styles from "./PersonalInfo.module.css";
+import { IPersonalInfoFormType } from "./PersonalInfo";
 import { FormContext } from "@/context/form-context";
 
 const { Title, Paragraph } = Typography;
 
-const MainSection = () => {
+const PersonalInfo = () => {
   const [formData, setFormData] = useState<IPersonalInfoFormType>();
   const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>(
     {}
@@ -23,7 +23,7 @@ const MainSection = () => {
         formData?.email?.length &&
         formData?.phone_number?.length
       ) {
-        updateFormState("isPersonalInfoComplete");
+        updateFormState({ yourInfo: false, selectPlan: true });
       }
     },
     [formData]
@@ -157,4 +157,4 @@ const MainSection = () => {
   );
 };
 
-export default MainSection;
+export default PersonalInfo;

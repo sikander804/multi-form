@@ -9,7 +9,7 @@ type IChildrenProps = React.ReactNode;
 
 const FormProvider = ({ children }: { children: IChildrenProps }) => {
   const [formState, setFormState] = useState({
-    yourInfo: false,
+    yourInfo: true,
     selectPlan: false,
     addOns: false,
     summary: false,
@@ -17,17 +17,17 @@ const FormProvider = ({ children }: { children: IChildrenProps }) => {
 
   const resetState = () => {
     setFormState({
-      yourInfo: false,
+      yourInfo: true,
       selectPlan: false,
       addOns: false,
       summary: false,
     });
   };
 
-  const updateFormState = (value: string) => {
+  const updateFormState = (updatedValues: { [key: string]: boolean }) => {
     setFormState((prevFormVal) => ({
       ...prevFormVal,
-      [value]: true,
+      ...updatedValues,
     }));
   };
 

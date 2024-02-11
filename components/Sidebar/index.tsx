@@ -33,6 +33,8 @@ const SIDE_BAR_CONTENT: ISidebarType[] = [
 const Sidebar = () => {
   const { formState } = useContext(FormContext);
 
+  console.log("formStateformState", formState);
+
   return (
     <div className={styles.sidebarContent}>
       {SIDE_BAR_CONTENT?.map((item: ISidebarType, i: number) => {
@@ -41,12 +43,10 @@ const Sidebar = () => {
             <div className={styles.menuLinkContent}>
               <div
                 style={{
-                  backgroundColor: !formState?.isPersonalInfoComplete
+                  backgroundColor: formState[item.key]
                     ? "hsl(206, 94%, 87%)"
                     : "",
-                  color: !formState?.isPersonalInfoComplete
-                    ? "hsl(213, 96%, 18%)"
-                    : "",
+                  color: formState[item.key] ? "hsl(213, 96%, 18%)" : "",
                 }}
                 className={styles.stepCount}
               >
