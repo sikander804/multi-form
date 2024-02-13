@@ -62,7 +62,7 @@ const PersonalInfo = () => {
   }, [formData]);
 
   return (
-    <div className={styles.mainSectionContainer}>
+    <>
       <Title className={styles.title} level={2}>
         Personal Info
       </Title>
@@ -153,7 +153,7 @@ const PersonalInfo = () => {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 

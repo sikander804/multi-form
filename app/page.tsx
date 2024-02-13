@@ -4,6 +4,8 @@ import { useContext } from "react";
 
 import Sidebar from "@/components/Sidebar";
 import PersonalInfo from "@/components/PersonalInfo";
+import SelectPlan from "@/components/SelectPlan";
+
 import { FormContext } from "@/context/form-context";
 
 export default function Home() {
@@ -15,7 +17,7 @@ export default function Home() {
         <div className="container">
           <div className="right-side-container">
             {formState.yourInfo && <PersonalInfo />}
-            {formState.selectPlan && <PersonalInfo />}
+            {formState.selectPlan && <SelectPlan />}
           </div>
         </div>
       </div>
