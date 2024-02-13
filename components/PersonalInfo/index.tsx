@@ -1,4 +1,4 @@
-import { useCallback, useState, useContext } from "react";
+import { useCallback, useState, useContext, memo } from "react";
 import { Typography, Input, Button } from "antd";
 
 import styles from "./PersonalInfo.module.css";
@@ -157,4 +157,4 @@ const PersonalInfo = () => {
   );
 };
 
-export default PersonalInfo;
+export default memo(PersonalInfo);

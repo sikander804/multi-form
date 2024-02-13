@@ -1,12 +1,11 @@
-import { useCallback, useContext } from "react";
-import { Typography, Layout, Grid } from "antd";
+import { useCallback, useContext, memo } from "react";
+import { Typography } from "antd";
 
 import { ISidebarType } from "./Sidebar";
 import styles from "./Sidebar.module.css";
 import { FormContext } from "@/context/form-context";
 
 const { Title, Paragraph } = Typography;
-const { useBreakpoint } = Grid;
 
 const SIDE_BAR_CONTENT: ISidebarType[] = [
   {
@@ -71,4 +70,4 @@ const Sidebar = () => {
   return leftSideSection();
 };
 
-export default Sidebar;
+export default memo(Sidebar);
