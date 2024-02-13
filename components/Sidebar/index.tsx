@@ -33,12 +33,8 @@ const SIDE_BAR_CONTENT: ISidebarType[] = [
 
 const Sidebar = () => {
   const { formState } = useContext(FormContext);
-  const { sm, md, lg } = useBreakpoint();
 
-  console.log("md", md);
-  console.log("sm", sm);
-
-  const desktopScreen = useCallback(() => {
+  const leftSideSection = useCallback(() => {
     return (
       <div className={styles.sidebarContent}>
         {SIDE_BAR_CONTENT?.map((item: ISidebarType, i: number) => {
@@ -56,7 +52,7 @@ const Sidebar = () => {
                 >
                   {i + 1}
                 </div>
-                <div>
+                <div className={styles.sidebarTextContent}>
                   <Paragraph className={styles.subtitle}>{`STEP ${
                     i + 1
                   }`}</Paragraph>
@@ -70,15 +66,9 @@ const Sidebar = () => {
         })}
       </div>
     );
-  }, [SIDE_BAR_CONTENT]);
+  }, [SIDE_BAR_CONTENT, formState]);
 
-  return lg ? (
-    desktopScreen()
-  ) : (
-    <div>
-      <h1>Its is a mobile screen</h1>
-    </div>
-  );
+  return leftSideSection();
 };
 
 export default Sidebar;

@@ -12,8 +12,12 @@ export default function Home() {
     <main className="main-container">
       <div className="form-container">
         <Sidebar />
-        {formState.yourInfo && <PersonalInfo />}
-        {formState.selectPlan && <PersonalInfo />}
+        <div className="container">
+          <div className="right-side-container">
+            {formState.yourInfo && <PersonalInfo />}
+            {formState.selectPlan && <PersonalInfo />}
+          </div>
+        </div>
       </div>
     </main>
   );

@@ -30,6 +30,10 @@
             color: hsl(0, 0%, 100%);
         }
 
+        .sidebarTextContent {
+            display: block;
+        }
+
         .title {
             margin: 0;
             color: hsl(0, 0%, 100%);
@@ -43,4 +47,30 @@
         }
     }
 }
+
+
+@media screen and (max-width: 990px) {
+    .sidebarContent {
+        background-image: url('/bg-sidebar-mobile.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        justify-content: center;
+
+        .menuLink {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            padding-top: 4em;
+        }
+        .sidebarTextContent {
+            display: none !important;
+        }
+    }
+
+   
+  }
 

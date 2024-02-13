@@ -25,6 +25,7 @@ const FormProvider = ({ children }: { children: IChildrenProps }) => {
   };
 
   const updateFormState = (updatedValues: { [key: string]: boolean }) => {
+    console.log("updated values", updatedValues);
     setFormState((prevFormVal) => ({
       ...prevFormVal,
       ...updatedValues,

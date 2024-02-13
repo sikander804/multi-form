@@ -26,7 +26,7 @@ const PersonalInfo = () => {
         updateFormState({ yourInfo: false, selectPlan: true });
       }
     },
-    [formData]
+    [formData, updateFormState]
   );
 
   const handleBlur = useCallback(

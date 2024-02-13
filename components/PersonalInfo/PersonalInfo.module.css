@@ -1,10 +1,6 @@
 
 
-.mainSectionContainer {
-    flex-grow: 1;
-    padding: 1rem 3rem;
-    padding-bottom: 2rem;
-    color: hsl(213, 96%, 18%);
+
 
     .title {
         margin: 0;
@@ -62,4 +58,3 @@
 
 
     }
-}
