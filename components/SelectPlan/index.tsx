@@ -52,70 +52,78 @@ const SelectPlan = () => {
   const rightSideSection = useCallback(() => {
     return (
       <div className={styles.mainSectionContainer}>
-        <Title className={styles.title} level={2}>
-          Select your plan
-        </Title>
-        <Paragraph className={styles.subtitle}>
-          You have the option of monthly or yearly billing
-        </Paragraph>
-        <div className={styles.cards}>
-          {SELECT_PLAN_ITEMS.map((item: ISelectPlanType) => {
-            return (
-              <div className={styles.itemCard}>
-                <div className={styles.icon}>
-                  <Image
-                    width={40}
-                    height={40}
-                    src={item.icon}
-                    alt={item.title}
-                  />
+        <div className={styles.planContent}>
+          <Title className={styles.title} level={2}>
+            Select your plan
+          </Title>
+          <Paragraph className={styles.subtitle}>
+            You have the option of monthly or yearly billing
+          </Paragraph>
+          <div className={styles.cards}>
+            {SELECT_PLAN_ITEMS.map((item: ISelectPlanType) => {
+              return (
+                <div className={styles.itemCard}>
+                  <div className={styles.icon}>
+                    <Image
+                      width={40}
+                      height={40}
+                      src={item.icon}
+                      alt={item.title}
+                    />
+                  </div>
+                  <div>
+                    <Title className={styles.itemTitle} level={2}>
+                      {item.title}
+                    </Title>
+                    <Paragraph className={styles.itemPrice}>
+                      {`${item.price}/month`}
+                    </Paragraph>
+                  </div>
                 </div>
-                <div>
-                  <Title className={styles.itemTitle} level={2}>
-                    {item.title}
-                  </Title>
-                  <Paragraph className={styles.itemPrice}>
-                    {`${item.price}/month`}
-                  </Paragraph>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          <div className={styles.plan}>
+            <Paragraph
+              className={styles.planMontly}
+              style={{
+                color:
+                  plan === "Monthly"
+                    ? "hsl(213, 96%, 18%)"
+                    : "hsl(231, 11%, 63%)",
+              }}
+            >
+              Monthly
+            </Paragraph>
+            <Switch
+              style={{
+                backgroundColor:
+                  plan === "Monthly"
+                    ? "hsl(213, 96%, 18%)"
+                    : "hsl(231, 11%, 63%)",
+              }}
+              className={styles.planSwitch}
+              onChange={onChangePlan}
+            />
+            <Paragraph
+              style={{
+                color:
+                  plan === "Yearly"
+                    ? "hsl(213, 96%, 18%)"
+                    : "hsl(231, 11%, 63%)",
+              }}
+              className={styles.planYearly}
+            >
+              Yearly
+            </Paragraph>
+          </div>
         </div>
 
-        <div className={styles.plan}>
-          <Paragraph
-            className={styles.planMontly}
-            style={{
-              color:
-                plan === "Monthly"
-                  ? "hsl(213, 96%, 18%)"
-                  : "hsl(231, 11%, 63%)",
-            }}
-          >
-            Monthly
-          </Paragraph>
-          <Switch
-            style={{
-              backgroundColor:
-                plan === "Monthly"
-                  ? "hsl(213, 96%, 18%)"
-                  : "hsl(231, 11%, 63%)",
-            }}
-            className={styles.planSwitch}
-            onChange={onChangePlan}
-          />
-          <Paragraph
-            style={{
-              color:
-                plan === "Yearly" ? "hsl(213, 96%, 18%)" : "hsl(231, 11%, 63%)",
-            }}
-            className={styles.planYearly}
-          >
-            Yearly
-          </Paragraph>
-        </div>
         <div className={styles.formButton}>
+          <Button type="link" size={"large"}>
+            Back
+          </Button>
           <Button htmlType="submit" className={styles.button} size={"large"}>
             Next Step
           </Button>

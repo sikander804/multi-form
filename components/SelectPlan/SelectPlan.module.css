@@ -1,3 +1,14 @@
+
+.mainSectionContainer {
+    display: flex;
+    flex-direction: column;
+    height: 30em;
+
+    .planContent {
+        flex-grow: 1;
+    }
+}
+
 .title {
     margin: 0;
     margin-bottom:0.2rem;
@@ -39,7 +50,8 @@
 }
 
 .formButton {
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
 
     .button {
         background-color: hsl(213, 96%, 18%);
@@ -80,6 +92,7 @@
         font-weight: 500;
     }
 }
+
 
 @media screen and (max-width: 990px) {
     .itemCard {
