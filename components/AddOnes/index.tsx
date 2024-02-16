@@ -29,19 +29,17 @@ const ADD_ONES_ITEMS: IAddOneType[] = [
 
 const AddOnes = () => {
   const [plan, setPlan] = useState("Monthly");
-  const [selectedPlan, setSelectedPlan] = useState<string | undefined>(
-    undefined
-  );
+
   const [checkedCheckboxes, setCheckedCheckboxes] = useState<string[]>([]);
 
   const { formState, updateFormState } = useContext(FormContext);
 
   const _checkDisable = useCallback(() => {
-    if (selectedPlan?.length) {
+    if (checkedCheckboxes?.length) {
       return false;
     }
     return true;
-  }, [selectedPlan]);
+  }, [checkedCheckboxes]);
 
   const _handleProceed = useCallback(() => {
     updateFormState({ selectPlan: false, addOnes: true });
@@ -136,14 +134,7 @@ const AddOnes = () => {
         </div>
       </>
     );
-  }, [
-    ADD_ONES_ITEMS,
-    formState,
-    plan,
-    _onChangeCheckbox,
-    selectedPlan,
-    checkedCheckboxes,
-  ]);
+  }, [ADD_ONES_ITEMS, formState, plan, _onChangeCheckbox, checkedCheckboxes]);
 
   return rightSideSection();
 };
