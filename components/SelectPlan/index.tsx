@@ -67,7 +67,7 @@ const SelectPlan = () => {
   }, [selectedPlan]);
 
   const _handleProceed = useCallback(() => {
-    updateFormState({ selectPlan: false, addOns: true });
+    updateFormState({ selectPlan: false, addOnes: true });
   }, [updateFormState]);
 
   const _handleGoBack = useCallback(() => {
