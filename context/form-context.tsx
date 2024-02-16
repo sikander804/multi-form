@@ -11,7 +11,7 @@ const FormProvider = ({ children }: { children: IChildrenProps }) => {
   const [formState, setFormState] = useState({
     yourInfo: true,
     selectPlan: false,
-    addOns: false,
+    addOnes: false,
     summary: false,
   });
 
@@ -19,7 +19,7 @@ const FormProvider = ({ children }: { children: IChildrenProps }) => {
     setFormState({
       yourInfo: true,
       selectPlan: false,
-      addOns: false,
+      addOnes: false,
       summary: false,
     });
   };
