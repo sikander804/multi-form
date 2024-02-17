@@ -79,7 +79,6 @@ const AddOnes = () => {
             {ADD_ONES_ITEMS.map((item: IAddOneType) => {
               const { id, title, price } = item;
               const isChecked = checkedCheckboxes.includes(id);
-              //   console.log("isChecked", isChecked);
               return (
                 <div
                   onClick={_onChangeCheckbox(id)}
